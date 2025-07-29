@@ -1,36 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Marathi News Website Design System - Inspired by Indiatimes Marathi */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors - Blue theme like Indiatimes */
+    --background: 0 0% 98%;
+    --foreground: 220 8% 15%;
+    
+    /* News Brand Primary - Deep Blue */
+    --primary: 217 91% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 217 91% 55%;
+    
+    /* News Red for Breaking/Important */
+    --news-red: 0 84% 55%;
+    --news-red-foreground: 0 0% 100%;
 
+    /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 8% 15%;
+    --card-hover: 217 100% 97%;
+    
+    /* News Categories */
+    --category-bg: 217 91% 45%;
+    --category-text: 0 0% 100%;
+    
+    /* Secondary Colors */
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 220 8% 15%;
+    
+    /* Header & Navigation */
+    --header-bg: 0 0% 100%;
+    --nav-bg: 217 91% 45%;
+    --nav-text: 0 0% 100%;
+    --nav-hover: 217 91% 55%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Text & Content */
+    --muted: 220 13% 91%;
+    --muted-foreground: 220 8% 46%;
+    --text-light: 220 8% 65%;
+    
+    /* Breaking News */
+    --breaking-bg: 0 84% 55%;
+    --breaking-text: 0 0% 100%;
+    
+    /* Gradients */
+    --gradient-news: linear-gradient(135deg, hsl(217 91% 45%), hsl(217 91% 55%));
+    --gradient-header: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 20% 98%));
+    
+    --accent: 217 91% 45%;
+    --accent-foreground: 0 0% 100%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
@@ -101,5 +128,32 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Marathi Text Optimization */
+  .marathi-text {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-feature-settings: "liga" 1, "kern" 1;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* News Card Hover Effects */
+  .news-card {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .news-card:hover {
+    @apply transform scale-[1.02] shadow-lg;
+  }
+  
+  /* Breaking News Animation */
+  .breaking-news {
+    animation: pulse-breaking 2s infinite;
+  }
+  
+  @keyframes pulse-breaking {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
   }
 }

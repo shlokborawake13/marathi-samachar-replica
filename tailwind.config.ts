@@ -26,7 +26,25 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					light: 'hsl(var(--primary-light))'
+				},
+				'news-red': {
+					DEFAULT: 'hsl(var(--news-red))',
+					foreground: 'hsl(var(--news-red-foreground))'
+				},
+				'category': {
+					bg: 'hsl(var(--category-bg))',
+					text: 'hsl(var(--category-text))'
+				},
+				'nav': {
+					bg: 'hsl(var(--nav-bg))',
+					text: 'hsl(var(--nav-text))',
+					hover: 'hsl(var(--nav-hover))'
+				},
+				'breaking': {
+					bg: 'hsl(var(--breaking-bg))',
+					text: 'hsl(var(--breaking-text))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
